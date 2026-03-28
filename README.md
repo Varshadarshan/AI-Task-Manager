@@ -1,4 +1,4 @@
-# LearnFlow — AI-Powered Task Flow Tracker
+# AI-Powered Task Flow Tracker
 
  A smart backend system that generates **personalized day-wise learning plans** using Groq AI, tracks your daily progress, and keeps you on path to complete your learning goals.
 
