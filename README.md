@@ -1,22 +1,22 @@
-# 🎯 LearnFlow — AI-Powered Learning Flow Tracker
+# LearnFlow — AI-Powered Learning Flow Tracker
 
-> A smart backend system that generates **personalized day-wise learning plans** using Groq AI, tracks your daily progress, and keeps you on path to complete your learning goals.
-
----
-
-## ✨ Features
-
-- 🔐 **JWT Authentication** — Secure login with BCrypt password hashing
-- 📧 **OTP Email Verification** — New users verify via email OTP before login
-- 🤖 **Groq AI Integration** — Auto-generates day-wise learning plans (LLaMA 3.3)
-- 📊 **Progress Tracker** — Real-time % completion as you mark daily topics done
-- 🔁 **Resend OTP** — Resend if OTP expires
-- 🔑 **Forgot Password** — OTP-based password reset flow
-- 📖 **Swagger UI** — Fully documented REST API
+ A smart backend system that generates **personalized day-wise learning plans** using Groq AI, tracks your daily progress, and keeps you on path to complete your learning goals.
 
 ---
 
-## 🛠️ Tech Stack
+##  Features
+
+- JWT Authentication** — Secure login with BCrypt password hashing
+- OTP Email Verification** — New users verify via email OTP before login
+- Groq AI Integration** — Auto-generates day-wise learning plans (LLaMA 3.3)
+- Progress Tracker** — Real-time % completion as you mark daily topics done
+- Resend OTP** — Resend if OTP expires
+- Forgot Password** — OTP-based password reset flow
+- Swagger UI** — Fully documented REST API
+
+---
+
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -32,7 +32,7 @@
 
 ---
 
-## 🗄️ Database Schema
+## Database Schema
 ```
 users
   └── id, username, password, email, is_verified
@@ -49,9 +49,9 @@ checklist_items
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### Prerequisites
+- Prerequisites
 - Java 17+
 - PostgreSQL
 - Maven
@@ -60,38 +60,38 @@ checklist_items
 
 ### Setup
 
-**1. Clone the repository**
+ 1. Clone the repository**
 ```bash
 git clone https://github.com/Varshadarshan/AI-Task-Manager.git
 cd AI-Task-Manager
 ```
 
-**2. Create PostgreSQL database**
+2. Create PostgreSQL database**
 ```sql
 CREATE DATABASE taskmanager;
 ```
 
-**3. Configure application.properties**
+3. Configure application.properties**
 ```bash
 cp src/main/resources/application.properties.example src/main/resources/application.properties
 ```
 Fill in your database credentials, Mailtrap SMTP, and Groq API key.
 
-**4. Run the application**
+4. Run the application**
 ```bash
 ./mvnw spring-boot:run
 ```
 
-**5. Access Swagger UI**
+5. Access Swagger UI**
 ```
 http://localhost:8080/swagger-ui.html
 ```
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
-### 🔐 Auth
+Auth
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | POST | `/auth/register` | Register + sends OTP to email |
@@ -101,7 +101,7 @@ http://localhost:8080/swagger-ui.html
 | POST | `/auth/forgot-password?email=` | Send password reset OTP |
 | POST | `/auth/reset-password?email=&otp=&newPassword=` | Reset password |
 
-### 📋 Tasks (JWT Required)
+Tasks (JWT Required)
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | POST | `/tasks` | Create task + AI generates learning plan |
@@ -111,7 +111,7 @@ http://localhost:8080/swagger-ui.html
 | DELETE | `/tasks/{id}` | Delete task |
 | GET | `/tasks/paged` | Get paginated tasks |
 
-### 🤖 AI Learning Plan (JWT Required)
+AI Learning Plan (JWT Required)
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/tasks/{id}/progress` | Get progress % + full checklist |
@@ -119,7 +119,7 @@ http://localhost:8080/swagger-ui.html
 
 ---
 
-## 🎯 Complete User Flow
+Complete User Flow
 ```
 Register → OTP Email → Verify OTP → Login → JWT Token
     ↓
@@ -131,14 +131,14 @@ Groq AI generates 30-day plan:
   Day 3: OOP Concepts
   ... up to Day 30
     ↓
-Mark Day 1 done → 3.3% complete 💪
-Mark Day 15 done → 50% complete 🔥
-Mark Day 30 done → 100% complete 🎉
+Mark Day 1 done → 3.3% complete 
+Mark Day 15 done → 50% complete 
+Mark Day 30 done → 100% complete 
 ```
 
 ---
 
-## 📊 Progress Response Example
+Progress Response Example
 ```json
 {
   "taskId": 1,
@@ -148,7 +148,7 @@ Mark Day 30 done → 100% complete 🎉
   "remainingDays": 22,
   "progressPercentage": 26.7,
   "daysUntilDeadline": 19,
-  "statusMessage": "🔥 You're making solid progress!",
+  "statusMessage": " You're making solid progress!",
   "checklist": [
     { "dayNumber": 1, "topic": "Introduction to Java & Setup", "isDone": true },
     { "dayNumber": 2, "topic": "Variables and Data Types", "isDone": false }
@@ -158,7 +158,7 @@ Mark Day 30 done → 100% complete 🎉
 
 ---
 
-## 🔧 Environment Variables
+Environment Variables
 
 See `application.properties.example` for all required configuration:
 ```properties
@@ -177,7 +177,7 @@ groq.api.key=your_groq_api_key
 
 ---
 
-## 👩‍💻 Author
+Author
 
 **Varsha Darshan**
 - GitHub: [@Varshadarshan](https://github.com/Varshadarshan)
@@ -185,6 +185,6 @@ groq.api.key=your_groq_api_key
 
 ---
 
-## 📄 License
+License
 
 This project is open source and available under the [MIT License](LICENSE).
