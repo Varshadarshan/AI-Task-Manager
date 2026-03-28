@@ -177,12 +177,4 @@ groq.api.key=your_groq_api_key
 
 ---
 
-Author
-
-**Varsha Darshan**
-- GitHub: [@Varshadarshan](https://github.com/Varshadarshan)
-- LinkedIn: [Varsha Darshan](https://linkedin.com/in/varshadarshan)
-
----
-
 This project is open source and available under the [MIT License](LICENSE).
