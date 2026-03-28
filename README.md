@@ -174,7 +174,3 @@ spring.mail.password=your_mailtrap_password
 # Groq AI
 groq.api.key=your_groq_api_key
 ```
-
----
-
-This project is open source and available under the [MIT License](LICENSE).
